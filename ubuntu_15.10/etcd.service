@@ -1,0 +1,10 @@
+[Unit]
+Description="etcd daemon"
+
+[Service]
+Type=forking
+ExecStartPre=/usr/share/etcd/etcd-pre-start.sh
+ExecStart=/usr/bin/etcd $ETCD_OPTS
+
+[Install]
+WantedBy=multi-user.target
