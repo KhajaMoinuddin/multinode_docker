@@ -1,0 +1,14 @@
+[Unit]
+Description="Docker daemon"
+Requires=flanneld.service
+After=flanneld.service
+BindsTo=flanneld.service
+
+[Service]
+Type=forking
+ExecStartPre=/usr/share/docker/docker-pre-start.sh
+ExecStartPost=/usr/share/docker/docker-post-start.sh
+ExecStart=docker daemon $DOCKER_OPTS
+
+[Install]
+WantedBy=multi-user.target
