@@ -2,9 +2,9 @@
 Description="flanneld daemon"
 
 [Service]
-Type=forking
-ExecStartPre=/usr/share/flanneld/flanneld-pre-start.sh
-ExecStart=/usr/bin/flanneld $flanneld_OPTS
+Type=notify
+EnvironmentFile=/etc/default/flanneld
+ExecStart=/usr/bin/flanneld $FLANNELD_OPTS
 
 [Install]
 WantedBy=multi-user.target

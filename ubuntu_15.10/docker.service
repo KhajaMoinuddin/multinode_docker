@@ -1,14 +1,10 @@
 [Unit]
 Description="Docker daemon"
-Requires=flanneld.service
-After=flanneld.service
-BindsTo=flanneld.service
 
 [Service]
-Type=forking
-ExecStartPre=/usr/share/docker/docker-pre-start.sh
-ExecStartPost=/usr/share/docker/docker-post-start.sh
-ExecStart=docker daemon $DOCKER_OPTS
+Type=notify
+EnvironmentFile=/var/run/flannel/subnet.env
+ExecStart=/usr/bin/docker daemon --bip=${FLANNEL_SUBNET} --mtu=${FLANNEL_MTU}
 
 [Install]
 WantedBy=multi-user.target

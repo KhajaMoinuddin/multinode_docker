@@ -2,8 +2,8 @@
 Description="etcd daemon"
 
 [Service]
-Type=forking
-ExecStartPre=/usr/share/etcd/etcd-pre-start.sh
+Type=notify
+EnvironmentFile=/etc/default/etcd
 ExecStart=/usr/bin/etcd $ETCD_OPTS
 
 [Install]

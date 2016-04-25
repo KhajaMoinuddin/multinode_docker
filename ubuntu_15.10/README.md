@@ -52,20 +52,8 @@ sudo cp docker.service /etc/systemd/system/
 sudo chmod 777 setup.sh
 ```
 
-5) configure master
-```
-[terminal-1 (host1)] $ ./setup.sh master
-```
-
-6) configure node
-```
-[terminal-2 (host2)] $ ./setup.sh slave
-```
-
-# docker
-complete instructions : [ubuntu]
 ## Installing docker on ubuntu 15.10
-
+complete instructions : [ubuntu]
 ```
 apt-get update
 apt-get install apt-transport-https ca-certificates
@@ -83,6 +71,17 @@ apt-get install --force-yes -y docker-engine
 
 sed -i.bak s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX='"cgroup_enable=memory swapaccount=1"'/g /etc/default/grub
 sudo update-grub
+```
+
+
+1) configure master
+```
+[terminal-1 (host1)] $ ./setup.sh master
+```
+
+2) configure node
+```
+[terminal-2 (host2)] $ ./setup.sh slave
 ```
 
 [ubuntu]: https://docs.docker.com/engine/installation/linux/ubuntulinux/
