@@ -73,7 +73,7 @@ apt-get install --force-yes -y docker-engine
 sed -i.bak s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX='"cgroup_enable=memory swapaccount=1"'/g /etc/default/grub
 sudo update-grub
 
-sudo cp docker.service /etc/systemd/system/
+sudo cp -f docker.service /lib/systemd/system/docker.service
 ```
 
 6) configure master
