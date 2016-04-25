@@ -45,7 +45,7 @@ end
 4) download service files and setup script
 ```
 git clone https://github.com/stephenranjit/multinode_docker.git
-cd ubuntu_15.10/
+cd multinode_docker/ubuntu_15.10/
 sudo cp etcd.service /etc/systemd/system/
 sudo cp flanneld.service /etc/systemd/system/
 sudo chmod 777 setup.sh
