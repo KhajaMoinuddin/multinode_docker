@@ -52,7 +52,9 @@ sudo chmod 777 setup.sh
 ```
 
 5) Installing docker on ubuntu 15.10
+
 complete instructions : [ubuntu]
+
 ```
 apt-get update
 apt-get install apt-transport-https ca-certificates
@@ -80,6 +82,9 @@ sudo cp docker.service /etc/systemd/system/
 ```
 
 7) configure node
+
+first change the ```NODE_IP``` in ```setup.sh```. Then run the following:
+
 ```
 [terminal-2 (host2)] $ ./setup.sh slave
 ```
