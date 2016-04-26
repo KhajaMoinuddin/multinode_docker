@@ -16,14 +16,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.define "host1" do |hostone|
-    hostone.vm.box = "trusty64"
+    hostone.vm.box = "wily64"
     hostone.vm.network "private_network", ip: "192.168.33.10"
+    # hostone.vm.network "public_network"
     hostone.vm.hostname = "host-one"
   end
 
   config.vm.define "host2" do |hosttwo|
-    hosttwo.vm.box = "trusty64"
+    hosttwo.vm.box = "wily64"
     hosttwo.vm.network "private_network", ip: "192.168.33.11"
+    # hosttwo.vm.network "public_network"
     hosttwo.vm.hostname = "host-two"
   end
 
