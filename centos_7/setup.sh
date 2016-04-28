@@ -28,6 +28,7 @@ export NODE_IP=192.168.33.10
 export MASTER_IP=192.168.33.10
 export FLANNEL_SUBNET=10.100.0.0/16
 export DOWNLOAD_PATH=/tmp
+export ETCD_EXECUTABLE_LOCATION=/usr/bin
 export ETCD_PORT=4001
 
 install_prereqs() {

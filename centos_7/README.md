@@ -44,6 +44,7 @@ end
 
 4) download service files and setup script
 ```
+yum install -y git
 git clone https://github.com/stephenranjit/multinode_docker.git
 cd multinode_docker/centos_7/
 sudo chmod 777 setup.sh
@@ -65,6 +66,8 @@ EOF
 
 yum update
 yum install -y docker-engine
+
+sudo cp -f docker.service /lib/systemd/system/docker.service
 ```
 
 6) configure master
