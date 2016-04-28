@@ -60,11 +60,8 @@ install_flanneld() {
 }
 
 update_flanneld_config() {
-
-  #FLANNEL_ETCD="http://127.0.0.1:2379"
   sed -i s/FLANNEL_ETCD=.*/FLANNEL_ETCD="http:\/\/$MASTER_IP:$ETCD_PORT"/g /etc/sysconfig/flanneld
-  #sed -i s/#FLANNEL_OPTIONS=.*/FLANNELD_OPTS="-etcd-endpoints=http://$MASTER_IP:$ETCD_PORT -iface=$NODE_IP"/g /etc/sysconfig/flanneld
-  #echo "FLANNELD_OPTS='-etcd-endpoints=http://$MASTER_IP:$ETCD_PORT -iface=$NODE_IP'" | sudo tee -a /etc/sysconfig/flanneld
+  sed -i s/#FLANNEL_OPTIONS=.*/FLANNEL_OPTIONS="-iface=$NODE_IP"/g /etc/sysconfig/flanneld
 }
 
 start_etcd() {
