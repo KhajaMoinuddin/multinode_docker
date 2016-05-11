@@ -55,7 +55,7 @@ sudo chmod 777 setup.sh
 complete instructions : [centos]
 
 ```
-$ sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
+sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
 [dockerrepo]
 name=Docker Repository
 baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
@@ -65,6 +65,7 @@ gpgkey=https://yum.dockerproject.org/gpg
 EOF
 
 yum update
+
 yum install -y docker-engine
 
 sudo cp -f docker.service /lib/systemd/system/docker.service
